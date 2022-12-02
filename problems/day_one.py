@@ -2,11 +2,12 @@ from problems.problem import Problem
 
 
 class DayOne(Problem):
-    def __init__(self):
-        pass
+    def __init__(self, filename, debug):
+        super().__init__(filename, debug)
 
     def read_input(self):
-        with open('input/input_day_one.txt', 'r') as f:
+        print(self.filename)
+        with open(self.filename, 'r') as f:
             data = f.readlines()
 
         return data
@@ -27,7 +28,6 @@ class DayOne(Problem):
 
     def part_two(self):
         file_data = self.read_input()
-        result = 0
 
         current_elf = 0
         all_elves = []

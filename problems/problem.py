@@ -1,6 +1,9 @@
 class Problem:
-    def __init__(self):
-        pass
+    filename = ''
+    DEBUG = False
+    def __init__(self, filename, debug):
+        self.filename = filename
+        self.DEBUG = debug
 
     def part_one(self):
         raise NotImplementedError()
