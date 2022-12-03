@@ -13,3 +13,7 @@ class Problem:
     
     def read_input(self):
         raise NotImplementedError()
+    
+    def debug(self, string: str) -> None:
+        if self.DEBUG:
+            print(string)

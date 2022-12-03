@@ -63,5 +63,7 @@ class ProblemFactory:
                 return DayTwentyThree(filename, debug)
             case 24:
                 return DayTwentyFour(filename, debug)
-            case _:
+            case 25:
                 return DayTwentyFive(filename, debug)
+            case _:
+                raise NotImplementedError()
