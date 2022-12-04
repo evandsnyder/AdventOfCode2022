@@ -38,7 +38,7 @@ class DayFour(Problem):
             pair = pair.split(',')
             elf_one = SectorZones(pair[0])
             elf_two = SectorZones(pair[1])
-            if self.is_overlapping(elf_one, elf_two) or self.is_overlapping(elf_two, elf_one):
+            if self.is_overlapping(elf_one, elf_two):
                 overlapping_pairs += 1
         print(f'Part Two: {overlapping_pairs}')
 
