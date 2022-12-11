@@ -28,13 +28,7 @@ class DaySix(Problem):
         print(f'Part Two: {start_of_message}')
     
     def is_unique(self, candidate: str) -> bool:
-        known_values: set = set()
-
-        for char in candidate:
-            if ord(char) in known_values: return False
-            known_values.add(ord(char))
-
-        return True
+        return len(set(candidate)) == len(candidate)
     
     
     def find_start_of_sequence(self, buffer: str, sequence_size: int) -> int:
@@ -49,9 +43,7 @@ class DaySix(Problem):
     
     def run_test_cases(self, sequence_size) -> None:
         test_cases = ['bvwbjplbgvbhsrlpgdmjqwftvncz', 'nppdvjthqldpwncqszvftbrmjlhg', 'nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg', 'zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw', 'mjqjpqmgbljsphdztnvjfqwrcgsmlb']
-        test_solutions = [5,6,10,11,7]
-        if sequence_size == 14:
-            test_solutions = [23, 23, 29, 26, 19]
+        test_solutions = [5,6,10,11,7] if sequence_size == 4 else [23, 23, 29, 26, 19]
 
         for i in range(len(test_cases)):
             self.debug(f'Test case {i+1} {"passed" if self.find_start_of_sequence(test_cases[i], sequence_size) == test_solutions[i] else "failed"}!')
